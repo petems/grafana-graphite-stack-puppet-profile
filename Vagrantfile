@@ -32,6 +32,10 @@ Vagrant.configure(2) do |config|
     cd /vagrant/ && r10k puppetfile install -v
   SHELL
 
+  config.vm.provision "shell", inline: <<-SHELL
+    curl -s https://raw.githubusercontent.com/petems/puppet-install-shell/master/install_puppet_agent.sh | sudo bash
+  SHELL
+
   # Use Vagrant provisioner to run puppet
   config.vm.provision :puppet do |puppet|
     puppet.environment_path = "environments"
