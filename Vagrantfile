@@ -44,11 +44,12 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.provision "shell", inline: <<-SHELL
-    echo "Simulating some load to make the graphs more interesting"
-    yum install -y stress
-    stress --cpu 1 --timeout 60
-    echo "Download file to create network traffic"
-    wget http://ipv4.download.thinkbroadband.com/50MB.zip --quiet
+    echo "Simulating some load to make the graphs more interesting";
+    curl -s https://packagecloud.io/install/repositories/petems/stress/script.rpm.sh | sudo bash;
+    yum install -y stress;
+    stress --cpu 1 --timeout 60;
+    echo "Download file to create network traffic";
+    wget http://ipv4.download.thinkbroadband.com/50MB.zip --quiet;
   SHELL
 
   config.vm.provision "shell", inline: <<-SHELL
