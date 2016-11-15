@@ -53,9 +53,9 @@ Vagrant.configure(2) do |config|
   SHELL
 
   config.vm.provision "shell", inline: <<-SHELL
-    service iptables stop # Could do this with Puppet, but feeling lazy
-    echo "Grafana is running at http://192.168.10.50:3000"
-    echo "Username and password: admin:admin"
+    service iptables stop || service firewalld stop;
+    echo "Grafana is running at http://192.168.10.50:3000";
+    echo "Username and password: admin:admin";
   SHELL
 
 end
