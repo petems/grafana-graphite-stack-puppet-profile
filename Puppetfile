@@ -1,7 +1,8 @@
 moduledir '/etc/puppetlabs/code/modules'
 
-mod 'puppetlabs-stdlib'
-mod 'puppetlabs-concat'
+mod 'puppetlabs-stdlib', '4.13.1'
+mod 'puppetlabs-concat', '2.2.0'
+mod 'stahnma-epel', '1.2.2'
 
 mod 'collectd',
   :git => 'https://github.com/voxpupuli/puppet-collectd',
