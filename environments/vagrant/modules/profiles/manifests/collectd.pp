@@ -1,23 +1,28 @@
 class profiles::collectd {
 
-  packagecloud::repo { 'chriscowleyunix/monitoring':
-    type => 'rpm',
-  }
-  ->
+  include ::epel
+
   class { '::collectd':
-    package_ensure => '5.5.0',
+    package_ensure => '5.6.0',
     typesdb        => [
       '/usr/share/collectd/types.db',
     ],
+    require        => Class['::epel'],
   }
 
   class { '::collectd::plugin::logfile':
-    log_level => 'warning',
+    log_level => 'debug',
     log_file  => '/var/log/collected.log',
   }
 
+  if $ipaddress_enp0s8 {
+    $interfaces_to_monitor = ['enp0s8','enp0s3']
+  } else {
+    $interfaces_to_monitor = ['eth0']
+  }
+
   class { '::collectd::plugin::interface':
-    interfaces     => ['eth0'],
+    interfaces     => $interfaces_to_monitor,
     ignoreselected => false,
   }
 
