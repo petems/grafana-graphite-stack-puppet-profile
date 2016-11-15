@@ -3,11 +3,18 @@
 
 Vagrant.configure(2) do |config|
 
-  config.vm.box = "puppetlabs/centos-6.6-64-puppet"
   config.vm.hostname = "grafana-graphite-stack-puppet-profile.vm"
 
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "2000"
+  end
+
+  config.vm.define "centos6" do |centos6|
+    centos6.vm.box = "puppetlabs/centos-6.6-64-puppet"
+  end
+
+  config.vm.define "centos7" do |centos7|
+    centos7.vm.box = "puppetlabs/centos-7.0-64-nocm"
   end
 
   config.vm.network "private_network", ip: "192.168.10.50"
