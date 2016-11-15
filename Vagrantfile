@@ -19,11 +19,11 @@ Vagrant.configure(2) do |config|
 
   config.vm.network "private_network", ip: "192.168.10.50"
 
-  # # Install Ruby
-  # config.vm.provision "shell", inline: <<-SHELL
-  #   curl -s https://packagecloud.io/install/repositories/petems/ruby2/script.rpm.sh | sudo bash
-  #   yum install -y ruby
-  # SHELL
+  # Install Ruby
+  config.vm.provision "shell", inline: <<-SHELL
+    curl -s https://packagecloud.io/install/repositories/petems/ruby2/script.rpm.sh | sudo bash
+    yum install -y ruby
+  SHELL
 
   # Use r10k to download modules
   config.vm.provision "shell", inline: <<-SHELL
