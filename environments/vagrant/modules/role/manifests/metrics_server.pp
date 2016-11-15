@@ -4,4 +4,5 @@ class role::metrics_server {
   include ::profiles::grafana
   include ::profiles::graphite
 
+  Class['::profiles::graphite'] -> Class['::profiles::grafana']
 }
