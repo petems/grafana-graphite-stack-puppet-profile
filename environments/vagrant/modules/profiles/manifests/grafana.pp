@@ -1,7 +1,8 @@
 class profiles::grafana {
 
   class { '::grafana':
-    version => '3.0.1',
+    version        => '5.1.0',
+    install_method => 'repo',
   }
   ->
   grafana_datasource { 'Graphite':

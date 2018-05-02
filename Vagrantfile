@@ -10,7 +10,7 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.define "centos6" do |centos6|
-    centos6.vm.box = "puppetlabs/centos-6.6-64-puppet"
+    centos6.vm.box = "puppetlabs/centos-6.6-64-nocm"
   end
 
   config.vm.define "centos7" do |centos7|
@@ -22,18 +22,18 @@ Vagrant.configure(2) do |config|
   # Install Ruby
   config.vm.provision "shell", inline: <<-SHELL
     curl -s https://packagecloud.io/install/repositories/petems/ruby2/script.rpm.sh | sudo bash
-    yum install -y ruby
+    yum install -y ruby curl
   SHELL
 
   # Use r10k to download modules
   config.vm.provision "shell", inline: <<-SHELL
-    yum install -y epel-release git
+    yum install -y epel-release git nss curl libcurl
     gem install r10k --no-ri --no-rdoc
     cd /vagrant/ && r10k puppetfile install -v
   SHELL
 
   config.vm.provision "shell", inline: <<-SHELL
-    curl -s https://raw.githubusercontent.com/petems/puppet-install-shell/master/install_puppet_agent.sh | sudo bash
+    wget -O - https://raw.githubusercontent.com/petems/puppet-install-shell/master/install_puppet_5_agent.sh | sudo sh
   SHELL
 
   # Use Vagrant provisioner to run puppet

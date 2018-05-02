@@ -1,12 +1,16 @@
 moduledir '/etc/puppetlabs/code/modules'
 
-mod 'puppetlabs-stdlib', '4.13.1'
 mod 'puppetlabs-concat', '2.2.0'
-mod 'stahnma-epel', '1.2.2'
+mod 'stahnma-epel', '1.3.0'
+mod 'puppet-grafana', '4.2.0'
+
+mod 'stdlib',
+  :git => 'https://github.com/puppetlabs/puppetlabs-stdlib',
+  :ref => 'aab8279772c203b72024416277cd8d68fd22dd60'
 
 mod 'collectd',
   :git => 'https://github.com/voxpupuli/puppet-collectd',
-  :ref => '2a164416ad521c1ffe50ba7f29c25dd013b37da9'
+  :tag => 'v8.3.0'
 
 mod 'grafana',
   :git => 'https://github.com/bfraser/puppet-grafana',

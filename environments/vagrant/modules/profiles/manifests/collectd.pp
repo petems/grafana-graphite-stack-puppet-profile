@@ -3,7 +3,7 @@ class profiles::collectd {
   include ::epel
 
   class { '::collectd':
-    package_ensure => '5.6.0',
+    package_ensure => '5.8.0',
     typesdb        => [
       '/usr/share/collectd/types.db',
     ],
