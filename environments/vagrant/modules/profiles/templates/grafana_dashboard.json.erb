@@ -1,214 +1,336 @@
 {
-  "id": 1,
-  "title": "Dashboard.json",
-  "originalTitle": "Dashboard.json",
-  "tags": [],
-  "style": "dark",
-  "timezone": "utc",
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
   "editable": true,
-  "hideControls": false,
-  "sharedCrosshair": false,
-  "rows": [
+  "gnetId": null,
+  "graphTooltip": 0,
+  "links": [],
+  "panels": [
     {
-      "collapse": false,
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Graphite",
       "editable": true,
-      "height": "250px",
-      "panels": [
+      "error": false,
+      "fill": 1,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
         {
-          "aliasColors": {},
-          "bars": false,
-          "datasource": "Graphite",
-          "editable": true,
-          "error": false,
-          "fill": 1,
-          "grid": {
-            "leftLogBase": 1,
-            "leftMax": null,
-            "leftMin": null,
-            "rightLogBase": 1,
-            "rightMax": null,
-            "rightMin": null,
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
-          "id": 1,
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "show": true,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 2,
-          "links": [],
-          "nullPointMode": "connected",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "span": 12,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "hide": false,
-              "refId": "A",
-              "target": "grafana-graphite-stack-puppet-profile_vm.load.load.longterm"
-            },
-            {
-              "hide": false,
-              "refId": "B",
-              "target": "grafana-graphite-stack-puppet-profile_vm.load.load.midterm"
-            },
-            {
-              "hide": false,
-              "refId": "C",
-              "target": "grafana-graphite-stack-puppet-profile_vm.load.load.shortterm"
-            }
-          ],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Load",
-          "tooltip": {
-            "shared": true,
-            "value_type": "cumulative"
-          },
-          "type": "graph",
-          "x-axis": true,
-          "y-axis": true,
-          "y_formats": [
-            "short",
-            "short"
-          ]
+          "hide": false,
+          "refId": "A",
+          "target": "grafana-graphite-stack-puppet-profile_vm.load.load.longterm"
+        },
+        {
+          "hide": false,
+          "refId": "B",
+          "target": "grafana-graphite-stack-puppet-profile_vm.load.load.midterm"
+        },
+        {
+          "hide": false,
+          "refId": "C",
+          "target": "grafana-graphite-stack-puppet-profile_vm.load.load.shortterm"
         }
       ],
-      "title": "Row"
-    },
-    {
-      "collapse": false,
-      "editable": true,
-      "height": "250px",
-      "panels": [
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Load",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
         {
-          "aliasColors": {},
-          "bars": false,
-          "datasource": "Graphite",
-          "editable": true,
-          "error": false,
-          "fill": 1,
-          "grid": {
-            "leftLogBase": 1,
-            "leftMax": null,
-            "leftMin": null,
-            "rightLogBase": 1,
-            "rightMax": null,
-            "rightMin": null,
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
-          "id": 2,
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "show": true,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 2,
-          "links": [],
-          "nullPointMode": "connected",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "span": 12,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "alias": "Received",
-              "fields": [
-                {
-                  "func": "mean",
-                  "name": "value"
-                }
-              ],
-              "groupBy": [
-                {
-                  "interval": "auto",
-                  "type": "time"
-                }
-              ],
-              "measurement": "interface_rx",
-              "query": "SELECT mean(\"value\") AS \"value\" FROM \"interface_rx\" WHERE $timeFilter GROUP BY time($interval)",
-              "rawQuery": false,
-              "refId": "A",
-              "tags": [],
-              "target": "grafana-graphite-stack-puppet-profile_vm.interface-eth0.if_octets.rx"
-            },
-            {
-              "alias": "Transmitted",
-              "fields": [
-                {
-                  "func": "mean",
-                  "name": "value"
-                }
-              ],
-              "groupBy": [
-                {
-                  "interval": "auto",
-                  "type": "time"
-                }
-              ],
-              "measurement": "interface_tx",
-              "query": "SELECT mean(\"value\") AS \"value\" FROM \"interface_tx\" WHERE $timeFilter GROUP BY time($interval)",
-              "rawQuery": false,
-              "refId": "B",
-              "tags": [],
-              "target": "grafana-graphite-stack-puppet-profile_vm.interface-eth0.if_octets.tx"
-            }
-          ],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "eth0",
-          "tooltip": {
-            "shared": true,
-            "value_type": "cumulative"
-          },
-          "type": "graph",
-          "x-axis": true,
-          "y-axis": true,
-          "y_formats": [
-            "Bps",
-            "short"
-          ]
+          "format": "short",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
         }
       ],
-      "title": "New row"
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
-      "collapse": false,
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Graphite",
       "editable": true,
-      "height": "250px",
-      "panels": [],
-      "title": "New row"
+      "error": false,
+      "fill": 1,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 7
+      },
+      "id": 2,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "$$hashKey": "object:221",
+          "alias": "Received",
+          "groupBy": [
+            {
+              "params": [
+                "auto"
+              ],
+              "type": "time"
+            }
+          ],
+          "measurement": "interface_rx",
+          "query": "SELECT mean(\"value\") AS \"value\" FROM \"interface_rx\" WHERE $timeFilter GROUP BY time($interval)",
+          "rawQuery": false,
+          "refCount": 0,
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [],
+          "target": "grafana-graphite-stack-puppet-profile_vm.interface-eth0.if_octets.rx"
+        },
+        {
+          "$$hashKey": "object:222",
+          "alias": "Transmitted",
+          "groupBy": [
+            {
+              "params": [
+                "auto"
+              ],
+              "type": "time"
+            }
+          ],
+          "measurement": "interface_tx",
+          "query": "SELECT mean(\"value\") AS \"value\" FROM \"interface_tx\" WHERE $timeFilter GROUP BY time($interval)",
+          "rawQuery": false,
+          "refCount": 0,
+          "refId": "B",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [],
+          "target": "grafana-graphite-stack-puppet-profile_vm.interface-eth0.if_octets.tx"
+        },
+        {
+          "$$hashKey": "object:296",
+          "alias": "Transmitted",
+          "groupBy": [
+            {
+              "params": [
+                "auto"
+              ],
+              "type": "time"
+            }
+          ],
+          "measurement": "interface_tx",
+          "query": "SELECT mean(\"value\") AS \"value\" FROM \"interface_tx\" WHERE $timeFilter GROUP BY time($interval)",
+          "rawQuery": false,
+          "refCount": 0,
+          "refId": "C",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [],
+          "target": "grafana-graphite-stack-puppet-profile_vm.interface-enp0s8.if_octets.rx"
+        },
+        {
+          "$$hashKey": "object:325",
+          "alias": "Transmitted",
+          "groupBy": [
+            {
+              "params": [
+                "auto"
+              ],
+              "type": "time"
+            }
+          ],
+          "measurement": "interface_tx",
+          "query": "SELECT mean(\"value\") AS \"value\" FROM \"interface_tx\" WHERE $timeFilter GROUP BY time($interval)",
+          "rawQuery": false,
+          "refCount": 0,
+          "refId": "D",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [],
+          "target": "grafana-graphite-stack-puppet-profile_vm.interface-enp0s3.if_octets.tx"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "eth0",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "Bps",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     }
   ],
+  "refresh": false,
+  "schemaVersion": 16,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
   "time": {
-    "from": "<%= (Time.now - 10*60).strftime("%Y-%m-%dT%H:%M:%S") %>",
-    "to": "<%= (Time.now).strftime("%Y-%m-%dT%H:%M:%S") %>"
+    "from": "now-30m",
+    "to": "now"
   },
   "timepicker": {
     "now": true,
@@ -236,14 +358,8 @@
       "30d"
     ]
   },
-  "templating": {
-    "list": []
-  },
-  "annotations": {
-    "list": []
-  },
-  "refresh": false,
-  "schemaVersion": 7,
-  "version": 2,
-  "links": []
+  "timezone": "utc",
+  "title": "Base System Stats",
+  "uid": "srJDbLGmz",
+  "version": 1
 }
