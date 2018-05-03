@@ -15,7 +15,7 @@ class profiles::collectd {
     log_file  => '/var/log/collected.log',
   }
 
-  if $ipaddress_enp0s8 {
+  if $::ipaddress_enp0s8 {
     $interfaces_to_monitor = ['enp0s8','enp0s3']
   } else {
     $interfaces_to_monitor = ['eth0']
