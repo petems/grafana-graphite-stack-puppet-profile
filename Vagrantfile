@@ -10,11 +10,11 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.define "centos6" do |centos6|
-    centos6.vm.box = "puppetlabs/centos-6.6-64-nocm"
+    centos6.vm.box = "geerlingguy/centos6"
   end
 
   config.vm.define "centos7" do |centos7|
-    centos7.vm.box = "puppetlabs/centos-7.0-64-nocm"
+    centos7.vm.box = "geerlingguy/centos7"
   end
 
   config.vm.network "private_network", ip: "192.168.10.50"
